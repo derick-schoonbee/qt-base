@@ -15,4 +15,5 @@ RUN apt-get update && apt-get install -y \
     libqt5xml5  \
     libqt5xmlpatterns5 \
     mysql-client \
+    libcurl4 \
     && apt-get clean
