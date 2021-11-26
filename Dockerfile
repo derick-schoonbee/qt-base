@@ -1,13 +1,18 @@
-FROM ubuntu:focal
+FROM ubuntu:22.04
 
-RUN apt-get update && apt-get clean # 20201027
+RUN apt-get update && apt-get clean # 20211126
 RUN apt-get install -y software-properties-common
-RUN apt-key adv --keyserver keys.gnupg.net --recv-keys 8C718D3B5072E1F5
-RUN echo "deb http://repo.mysql.com/apt/ubuntu/ bionic mysql-8.0" >> /etc/apt/sources.list.d/mysql.list
-RUN apt-get update && apt-get install -y mysql-client
-RUN add-apt-repository ppa:beineri/opt-qt-5.15.0-focal && apt-get update && apt-get clean #
-RUN apt-get install -y qt515base qt5-qmake curl wget openssl1.1
-RUN ln -s /opt/qt515/bin/qt512-env.sh /etc/profile.d/
-ENV QT_BASE_DIR=/opt/qt515
-ENV QTDIR="${QT_BASE_DIR}"
-ENV PATH="${QT_BASE_DIR}/bin:${PATH}"
+RUN apt-get update && apt-get install -y \ 
+    libqt5concurrent5 \
+    libqt5gui5 \
+    libqt5opengl5  \
+    libqt5printsupport5  \
+    libqt5qml5 \
+    libqt5qmlmodels5  \
+    libqt5qmlworkerscript5  \
+    libqt5script5 \
+    libqt5sql5-mysql \
+    libqt5xml5  \
+    libqt5xmlpatterns5 \
+    mysql-client \
+    && apt-get clean
