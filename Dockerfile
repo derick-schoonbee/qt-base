@@ -16,4 +16,5 @@ RUN apt-get update && apt-get install -y \
     libqt5xmlpatterns5 \
     mysql-client \
     libcurl4 \
+    s3cmd \
     && apt-get clean
