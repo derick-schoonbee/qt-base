@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-RUN apt-get update && apt-get clean # 2021-12-05
+RUN apt-get update && apt-get clean # 2022-01-09
 RUN apt-get install -y software-properties-common
 RUN apt-get update && apt-get install -y \ 
     libqt5concurrent5 \
@@ -16,6 +16,6 @@ RUN apt-get update && apt-get install -y \
     libqt5xmlpatterns5 \
     mysql-client \
     libcurl4 \
-    zip unzip p7zip vim \
+    zip unzip p7zip vim bzip2 \
     s3cmd \
     && apt-get clean
